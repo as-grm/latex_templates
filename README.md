@@ -1,2 +1,8 @@
-# latex_templates
-Various my LaTeX templates: report, book, beamer
+# My LaTeX Templates
+
+Various LaTeX templates:
+ - report,
+ - book,
+ - beamer
+
+The default latex compiler is **xelatex**. 
