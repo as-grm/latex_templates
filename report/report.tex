@@ -1,0 +1,225 @@
+% **********************************************************************
+% Copyright 2020 Aleksander GRM
+
+% Author: Aleksander GRM @fpp.uni-lj.si
+% Description: This is an unofficial report template I made from scratch. 
+%              Feel free to use it, modify it, and share it.
+% Version: 1.0
+% Date: 02/12/2020
+% **********************************************************************
+
+
+% ******************
+% *** page style ***
+%
+% *** single side page ***
+\documentclass[11pt]{article}
+%
+% *** two side pages ***
+%     must also use correct page margins and fancyhdr
+%
+%\documentclass[11pt,twoside]{article} % If needed twosided
+% ******************
+
+
+% ******************************************
+% *** hyper references must be set first ***
+% ******************************************
+%
+% *** choose the correct version with the used compiler ***
+%
+%\usepackage[dvips]{hyperref}  % latex + dvips + ps2pdf
+%\usepackage[pdftex]{hyperref} % pdflatex
+\usepackage[xetex]{hyperref}   % xelatex (default)
+\hypersetup{
+	colorlinks = true,
+	linkcolor = {red!50!black},
+	citecolor = {blue!50!black},
+	urlcolor = {blue!80!black}
+}
+
+
+% ********************************************************
+% *** Compile with xelatex requires UTF-8 file format! ***
+% ********************************************************
+% 
+% *** UTF-8 coding
+% 
+% Comment if compiled with xelatex, unless uncomment for pdflatex!
+%
+%\usepackage[utf8x]{inputenc} % needed for pdflatex
+
+
+% ************************
+% *** Language support ***
+% ************************
+%
+%\usepackage[slovene]{babel}
+\usepackage[english]{babel}
+% ************************
+
+
+% *** show labels ***
+% \usepackage{showlabels}
+
+% *********************
+% *** Paper margins ***
+% *********************
+%
+\usepackage{vmargin}
+%\setmarginsrb{leftmargin}{topmargin}{rightmargin}{bottommargin}
+%{headheight}{headsep}{footheight}{footskip}
+\setpapersize{A4}
+% twoside
+%\setmarginsrb{30mm}{15mm}{20mm}{15mm}{10mm}{10mm}{10mm}{15mm}
+% oneside
+\setmarginsrb{25mm}{15mm}{25mm}{15mm}{10mm}{10mm}{10mm}{15mm}
+
+
+%
+% *** include packages ***
+%
+\usepackage[numbers]{natbib}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{empheq, nccmath}
+\usepackage[many]{tcolorbox}
+\usepackage{siunitx}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+%
+% registered - \textregistered
+% copyright  - \textcopyright
+\usepackage{textcomp}
+
+%
+\usepackage[all,knot]{xy}
+\xyoption{arc}
+\usepackage{multimedia}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{cancel}
+\usetikzlibrary{shadings}
+%
+% *** Matlab
+\usepackage[framed,numbered]{matlab-prettifier}
+
+%
+% *** Caption to be boldface ***
+%
+\usepackage{caption}
+\captionsetup[figure]{labelfont=bf}
+
+%
+% *** Numbered environment ***
+%
+%\newenvironment{naloga}[1][]{\noindent \textbf{Naloga} }{\medskip}
+\newenvironment{primer}[1][]{\noindent \textbf{Primer.}  }{\medskip}
+\newenvironment{resitev}[1][]{\noindent \textbf{Rešitev.}  }{\medskip}
+
+%
+% *** Examples ***
+%
+\theoremstyle{definition}
+\newtheorem{exmp}{}[section]
+\newtheorem{naloga}{Naloga}[section]
+
+
+%
+% *** Fancy header ***
+%
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textsc{Poročilo}}
+\chead{}
+\rhead{\textcopyright 2021 \textsc{A. Grm}}
+\cfoot{\thepage}
+
+% ********************************
+% *** Additional notations.tex ***
+% ********************************
+%
+\include{../notations}
+%
+% *********************
+
+\begin{document}
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+
+    \begin{center}
+	    \includegraphics[height=6cm]{figs/fpp_logo_vertical_slo_red.pdf}\\[2.0 cm]
+	    
+		\rule{\linewidth}{1 mm} \\[7mm]
+		{ \huge \bfseries Poročilo}\\[4mm]
+		\rule{\linewidth}{1 mm} \\[4mm]
+		{ \Large \bfseries Naslov raziskave ...}\\[1mm]
+		\rule{\linewidth}{1 mm} \\[3cm]
+		
+		\begin{flushleft} \large
+			\emph{Avtor:}\\[3mm]
+			\hspace{1cm}doc.dr. Aleksander GRM\\[1mm]
+		\end{flushleft}
+		
+		\vfill
+		
+		{\large \today}\\[1cm]
+	\end{center}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\thispagestyle{plain}
+
+\tableofcontents
+
+% ***********************************
+\newpage
+\section*{Povzetek}
+
+Nekaj o povzetku ...
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Uvod}
+
+Nekaj uvodnega dela ...
+
+\section{Formulacija problema}
+
+Opis problema je naveden v \cite{cfd_ferziger_peric} ...
+
+\subsection{Robni pogoji}
+
+
+To so robni pogoji ...
+
+\subsection{Potencialni problem}
+
+To je potencialni problem ...
+
+% *** References ***
+%\newpage
+\vspace{1cm}
+
+% using natbib package: plainnat, unsrtnat, abbrevnat
+\bibliographystyle{plainnat}
+\bibliography{literature_db}
+
+\end{document}
+
+
+

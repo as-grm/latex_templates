@@ -1,0 +1,249 @@
+% **********************************************************************
+% Copyright 2021 Aleksander GRM
+
+% Author: Aleksander GRM @fpp.uni-lj.si
+% Description: This is an unofficial book tmplate I made from scratch. 
+%              Feel free to use it, modify it, share it.
+% Version: 1.1
+% Date: 23/11/2021
+% **********************************************************************
+
+
+% ******************
+% *** page style ***
+%
+\documentclass[11pt,twosided]{book}
+%
+% ******************
+
+
+% ******************************************
+% *** hyper references must be set first ***
+% ******************************************
+%
+% *** choose a correct version with used compiler ***
+%
+%\usepackage[dvips]{hyperref}  % latex + dvips + ps2pdf
+%\usepackage[pdftex]{hyperref} % pdflatex
+\usepackage[xetex]{hyperref}   % xelatex (default)
+\hypersetup{
+	colorlinks = true,
+	linkcolor = {red!50!black},
+	citecolor = {blue!50!black},
+	urlcolor = {blue!80!black}
+}
+
+
+% ********************************************************
+% *** Compile with xelatex requires UTF-8 file format! ***
+% ********************************************************
+% 
+% *** UTF-8 coding
+% 
+% Comment if copiled with xelatex, unless uncomment for pdflatex!
+%
+%\usepackage[utf8x]{inputenc} % needed for pdflatex
+
+
+% ************************
+% *** Language support ***
+% ************************
+%
+\usepackage[slovene]{babel}
+%\usepackage[english]{babel}
+% ************************
+
+
+% *** show labels ***
+% \usepackage{showlabels}
+
+% *********************
+% *** Paper margins ***
+% *********************
+%
+\usepackage{geometry}
+\geometry{
+	paperwidth=175mm,
+	paperheight=255mm,
+	left=25mm,
+	width=125mm,
+	top=25mm,
+	height=205mm
+}
+%
+% *** Crop marks ***
+%
+%\usepackage[a4,frame,center]{crop}
+\usepackage[a4,cam,center]{crop}
+
+%
+% *** Fancy chapter/section look ***
+%
+%Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[Bjornstrup]{fncychap}
+%\usepackage[Conny]{fncychap}
+%
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\sffamily\Large\bfseries}
+{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\sffamily\large\bfseries}
+{\thesubsection}{1em}{}
+
+
+%
+% *** include packages ***
+%
+\usepackage[numbers]{natbib}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{empheq, nccmath}
+\usepackage[many]{tcolorbox}
+\usepackage{siunitx}
+\usepackage{datetime}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+%
+% registered - \textregistered
+% copyright  - \textcopyright
+\usepackage{textcomp}
+
+%
+\usepackage[all,knot]{xy}
+\xyoption{arc}
+\usepackage{multimedia}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{xfrac}
+\usepackage{cancel}
+
+%
+% *** Drawing tools ***
+%
+\usepackage{tikz}
+\usetikzlibrary{shadings}
+\usetikzlibrary{calc} 
+
+%
+% *** Matlab
+\usepackage[framed,numbered]{matlab-prettifier}
+
+%
+% *** Caption to be bold face ***
+%
+\usepackage{caption}
+\captionsetup[figure]{labelfont=bf}
+
+
+%
+% *** Numbered environment ***
+%
+%\newenvironment{naloga}[1][]{\noindent \textbf{Naloga} }{\medskip}
+\newenvironment{primer}[1][]{\noindent \textbf{Primer.}  }{\medskip}
+\newenvironment{resitev}[1][]{\noindent \textbf{Rešitev.}  }{\medskip}
+
+%
+% *** Examples ***
+%
+\theoremstyle{definition}
+\newtheorem{exmp}{}[section]
+\newtheorem{naloga}{Naloga}[section]
+
+
+%
+% *** Fancy header ***
+%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO,LE]{\textsc{Oceanska navigacija}}
+\chead{}
+\fancyhead[RO,RE]{\textsc{A. Grm} \textcopyright 2021}
+\cfoot{\thepage}
+
+% ********************************
+% *** Additional notations.tex ***
+% ********************************
+%
+\include{../notations}
+%
+% *********************
+
+%\AtBeginShipout
+%{
+%	\begin{tikzpicture}[remember picture,overlay]
+%		\node [rectangle, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+%	\end{tikzpicture}
+%}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{roman}
+\pagestyle{empty}
+
+    \begin{center}
+	    \includegraphics[height=5cm]{logo/fpp_logo_vertical_slo_red.pdf}\\[3cm]
+	    
+		\rule{\linewidth}{1 mm} \\[7mm]
+		{ \huge \bfseries Oceanska navigacija}\\[4mm]
+		\rule{\linewidth}{1 mm} \\[3cm]
+		
+		{\large \textsc{Aleksander GRM} }
+		
+	\end{center}
+
+\clearpage
+~
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}
+
+\tableofcontents
+
+% ***********************************
+\newpage
+\chapter*{Povzetek}
+
+Nekaj o povzetku ...
+\clearpage
+~
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{01_uvod/01_uvod.tex}
+
+\newpage
+\include{02_st/02_st.tex}
+
+\newpage
+\include{03_lo/03_lo.tex}
+
+\newpage
+\include{04_an/04_an.tex}
+
+\newpage
+\include{05_appendix/05_appendix.tex}
+
+
+% *** References ***
+\newpage
+
+% using natbib package: plainnat, unsrtnat, abbrevnat
+\bibliographystyle{plainnat}
+\bibliography{literature_db}
+
+\end{document}
+
+
+

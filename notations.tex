@@ -1,0 +1,244 @@
+% 
+%       *** Latex additions ***
+% 
+% - Author: aleksander.grm@fpp.uni-lj.si 
+% - Date: 21/08/2023 (last modified)
+
+%
+% *** Needed packages ***
+%
+\usepackage{dsfont}
+
+%
+% *** New Commands ***
+%
+%\newcommand*{\point}[1]{\vec{\mkern0mu#1}}
+\newcommand{\ci}[0]{\perp\!\!\!\!\!\perp} % conditional independence
+\newcommand{\point}[1]{{#1}} % points 
+\renewcommand{\vec}[1]{{\boldsymbol{{#1}}}}  % math vector
+\newcommand{\uvec}[1]{{\mathbf{\hat{{#1}}}}} % unit vector
+\newcommand{\mat}[1]{{\boldsymbol{{#1}}}}    % matrix
+\newcommand{\RR}[0]{\mathbb{R}} % real numbers
+\newcommand{\ZZ}[0]{\mathbb{Z}} % integers
+\newcommand{\NN}[0]{\mathbb{N}} % natural numbers
+\newcommand{\QQ}[0]{\mathbb{Q}} % rational numbers
+\newcommand{\CC}[0]{\mathbb{C}} % complex numbers
+\newcommand{\tr}[0]{\text{tr}} % trace
+\renewcommand{\d}[0]{\mathrm{d}} % total derivative
+\newcommand{\prt}[0]{\partial}
+\newcommand{\inv}{^{-1}} % inverse
+\newcommand{\id}{\mathrm{id}} % identity mapping
+\renewcommand{\dim}{\mathrm{dim}} % dimension
+%\newcommand{\dim}[1]{\text{\textsc{dim}}\left(#1\right)} 
+\newcommand{\adj}[0]{\mathrm{adj}} % adjoint or adjugate matrix
+\newcommand{\rank}[0]{\mathrm{rk}} % rank
+\newcommand{\determ}[1]{\mathrm{det}(#1)} % determinant
+\newcommand{\scp}[2]{\langle #1 , #2 \rangle}
+\newcommand{\kernel}[0]{\mathrm{ker}} % kernel/nullspace
+\newcommand{\img}[0]{\mathrm{Im}} % image
+\newcommand{\idx}[1]{{(#1)}} % index
+\DeclareMathOperator*{\diag}{diag} % diagonal operator
+\newcommand{\mean}{\mathds{E}} % expectation
+\newcommand{\var}{\mathds{V}} % variance
+\newcommand{\gauss}[2]{\mathcal{N}\big(#1,\,#2\big)} % gaussian distribution N(.,.)
+\newcommand{\gaussx}[3]{\mathcal{N}\big(#1\,|\,#2,\,#3\big)} % gaussian distribution N(.|.,.)
+\newcommand{\gaussBig}[2]{\mathcal{N}\left(#1,\,#2\right)} % see above, but with brackets that adjust to the height of the arguments
+\newcommand{\gaussxBig}[3]{\mathcal{N}\left(#1\,|\,#2,\,#3\right)} % see above, but with brackets that adjust to the height of the arguments
+\DeclareMathOperator{\cov}{Cov} % covariance (matrix) 
+\newcommand{\T}[0]{^\top} % transpose
+\newcommand{\imu}[0]{\mathrm{i}} % complex unit i
+\newcommand{\matdet}[1]{\left|\begin{matrix}#1\end{matrix}\right|} % determinant of a matrix
+\newcommand{\vecnorm}[1]{\lVert#1\rVert}
+\newcommand{\absval}[1]{\lvert#1\rvert}
+\newcommand{\scaprod}[2]{\langle #1, #2 \rangle_0}
+\newcommand{\operator}[2]{\operatorname{#1}\left[#2\right]}
+\newcommand{\order}[1]{\mathcal{O}(#1)}
+
+%
+% *** Arc notations ***
+%
+\newcommand{\txtdeg}{\si{\degree}}
+\newcommand{\txtmin}{\si{\arcmiute}}
+\newcommand{\txtsec}{\si{\arcsecond}}
+\newcommand{\arcdeg}[1]{\si{\ang{#1;;}}}
+\newcommand{\arcmin}[1]{\si{\ang{;#1;}}}
+\newcommand{\arcsec}[1]{\si{\ang{;;#1}}}
+\newcommand{\posdm}[2]{\si{\ang{#1;#2;}}}
+\newcommand{\posdms}[3]{\si{\ang{#1;#2;#3}}}
+
+%
+% *** some shotcuts, bolded symbols, fnacy style, ... ***
+%
+\newcommand{\mc}{\mathcal}
+\newcommand{\mb}{\mathbb}
+\newcommand{\ul}{\underline}
+\newcommand{\tb}{\textbf}
+\newcommand{\bk}{\boldkey}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+%
+% *** Special keywords
+%
+\newcommand{\cpp}{\textbf{\texttt{c++}}}
+\newcommand{\python}{\textbf{\texttt{python}}}
+
+%
+% *** dimension less numbers, and other numbers ***
+%
+\newcommand{\RE}{\text{\textsl{Re}}}
+\newcommand{\MA}{\text{\textsl{Ma}}}
+\newcommand{\KN}{\text{\textsl{Kn}}}
+%\newcommand{\half}{\sfrac{1}{2}}
+\newcommand{\half}{1/2}
+\newcommand{\emphc}[1]{\textcolor{deepcarminepink}{\textbf{#1}}}
+
+%
+% *** tabular ***
+%
+\newcommand{\centercell}[1]{\multicolumn{1}{c}{#1}}
+\newcommand{\head}[1]{\centercell{\bfseries#1}}
+
+%
+% *** various color definitions ***
+%
+\definecolor{darkgreen}{rgb}{0,0.6,0}
+%
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\green}[1]{{\color{darkgreen}#1}}
+\newcommand{\orange}[1]{{\color{orange}#1}}
+\newcommand{\magenta}[1]{{\color{magenta}#1}}
+\newcommand{\cyan}[1]{{\color{cyan}#1}}
+%
+\definecolor{royalblue1}{RGB}{72,118,255}
+\definecolor{shadowbg}{RGB}{51,51,51}
+\definecolor{titlebg}{RGB}{51,51,51}
+\definecolor{royalblue4}{RGB}{39,64,139}
+\definecolor{navyblue}{RGB}{0, 0, 127}
+\definecolor{deepcarminepink}{rgb}{0.94, 0.19, 0.22}
+
+%
+% *** redefine EMPH types ***
+%
+\renewcommand{\emph}[1]{\blue{\bf{#1}}}
+\newcommand{\myfig}[1]{\iflanguage{english}{\textbf{Figure}}{\textbf{Slika}} #1}
+\newcommand{\myeq}[1]{\iflanguage{english}{\textbf{Eq.}}{\textbf{En.}} (#1)}
+
+%
+% *** place a colored box around a character ***
+%
+\gdef\colchar#1#2{%
+	\tikz[baseline]{%
+		\node[anchor=base,inner sep=2pt,outer sep=0pt,fill = #2!20] {#1};
+	}%
+}%
+
+%
+% *** Trade names, Copy right... ***
+%
+% \textsuperscript \textsubscript
+\newcommand{\matlab}{\texttt{MatLab}\textsuperscript{\textregistered} }
+
+
+% ***********************************************
+% *** Blocks: block, exampleblock, alertblock ***
+% ***********************************************
+
+%
+% *** Blocks: block, exampleblock, alertblock ***
+%
+%\definecolor{shadowbga}{RGB}{51,51,51}
+\definecolor{myblue}{rgb}{.9, .9, 1}
+\definecolor{lightblue}{rgb}{.9, .9, .5}
+%\newcommand*\mybluebox[1]{%
+	%	\colorbox{myblue}{\hspace{1em}#1\hspace{1em}}}
+
+\newlength\mytemplen
+\newsavebox\mytempbox
+
+\makeatletter
+\newcommand\mybluebox{%
+	\@ifnextchar[%]
+	{\@mybluebox}%
+	{\@mybluebox[0pt]}}
+
+\def\@mybluebox[#1]{%
+	\@ifnextchar[%]
+	{\@@mybluebox[#1]}%
+	{\@@mybluebox[#1][0pt]}}
+
+\def\@@mybluebox[#1][#2]#3{
+	\sbox\mytempbox{#3}%
+	\mytemplen\ht\mytempbox
+	\advance\mytemplen #1\relax
+	\ht\mytempbox\mytemplen
+	\mytemplen\dp\mytempbox
+	\advance\mytemplen #2\relax
+	\dp\mytempbox\mytemplen
+	\colorbox{myblue}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+\makeatother
+
+
+% *** Example Boxed Equation ***
+%
+
+% For a single line equation use: box={\mybluebox[5pt][-2pt]}
+
+% \begin{empheq}[box=\mybluebox]{equation*}
+	%   c(t) = c_{in}\left[ 1 - \left(1+ \frac{\Delta \phi}{V_0} \: t
+	%   \right)^{-\frac{\phi_{in}}{\Delta \phi}} \right]
+	% \end{empheq}
+%
+% \begin{empheq}[box={\mybluebox[5pt]}]{equation*}
+	% 	c_i = \sum_j A_{ij}
+	% \end{empheq}
+%
+% \begin{empheq}[box={\mybluebox[2pt][2pt]}]{equation*}
+	%	c_i = \langle\psi|\phi\rangle
+	% \end{empheq}
+
+
+% *********************************************************
+% *** Inline code listings: Matlab, Python pretty print ***
+% *********************************************************
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+
+% *** Example ***
+ 
+% language: Matlab-editor, Matlab-Pyglike, Python, Octave, C, C++,
+% look in help doc for additional languages  
+
+%\begin{frame}[fragile]{Title}
+%
+%  \lstinputlisting[language=Octave,style=mystyle]{BitXorMatrix.m}
+%
+%\end{frame}
+

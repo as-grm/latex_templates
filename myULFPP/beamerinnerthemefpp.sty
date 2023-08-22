@@ -1,0 +1,101 @@
+% Specify how elements are typeset inside the frame
+\ProvidesPackage{beamerinnerthemefpp}
+
+% --- Title Page ---
+\makeatletter
+\setbeamertemplate{title page}
+{
+	\vbox{}
+	\vfill
+	\begin{centering}
+		\vskip0.25em%
+		\begin{beamercolorbox}[sep=8pt,center]{title}
+			\usebeamerfont{title}\inserttitle\par%
+			\ifx\insertsubtitle\@empty%
+			\else%
+			\vskip0.25em%
+			{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+			\fi%     
+		\end{beamercolorbox}%
+		\vskip1.5em%
+		%\begin{beamercolorbox}[sep=8pt,center]{institute}
+		%	\usebeamerfont{institute}\insertinstitute
+		%\end{beamercolorbox}
+		%
+		{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+		\vskip1.0em%
+		\begin{beamercolorbox}[sep=8pt,center]{author}
+			\usebeamerfont{author}\insertauthor
+		\end{beamercolorbox}
+		\vskip-0.5em%
+		%
+		%\vskip1.0em%
+		\begin{beamercolorbox}[sep=8pt,center]{date}
+			\usebeamerfont{date}\insertdate
+		\end{beamercolorbox}\vskip0.5em
+	\end{centering}
+	\vfill
+}
+\makeatother
+
+% --- Footer ---
+%Remove Navigation Bars
+\setbeamertemplate{footline}[frame number]{}
+% And Symbols
+\setbeamertemplate{navigation symbols}{}
+% Design
+\setbeamertemplate{footline}{
+	%\begin{tikzpicture}[remember picture,overlay]
+	%    \coordinate (p1) at (0.2,0.5);
+	%    \coordinate (p2) at (12.5,0.5);
+	
+	%    \draw[fppblue, very thick] (p1) -- (p2);
+	    
+	    %\node [inner sep=0pt,clip,rounded corners=0.1cm] (oxlogo) at (0.85\textwidth,0.5) %{\includegraphics[width=.16\textwidth]{Theme/Logos/fpp_logo_horizontal_foot_eng.pdf}};
+	
+	%\end{tikzpicture}
+}
+
+% --- Header ---
+\setbeamertemplate{frametitle}{
+
+    \begin{beamercolorbox}[wd=\paperwidth,ht=4.0ex,dp=1.375ex]{frametitle}
+        \hspace*{10ex}\insertframetitle \hfill {\footnotesize\insertframenumber/\inserttotalframenumber} \hspace*{2ex}
+    \end{beamercolorbox}
+    
+    \par
+    
+    \begin{tikzpicture}[remember picture,overlay]
+    
+	% horizontal lines
+    \draw[fppblue, thick] (1.0, 0.2)--(13.2, 0.2);
+    \draw[fppblue, thick] (13.4, 0.2)--(14.8, 0.2);
+    
+    % sea
+    \draw[fppblue, thick] (-0.8, 0.2)--(0.9, 0.2);
+    \draw[fppblue, thin] (-0.75, 0.16)--(0.75, 0.16);
+    
+    % mast + rule line
+    \draw[fppblue, thick] (-0.2, 1.05)--(-0.2, 0.3);
+    %\draw[fppblue, thick] (-0.2, -0.2)--(-0.2, -0.8);
+    
+    % sails
+    \draw[fppblue, thin] (-0.2, 1.0) -- (0.4, 0.3);
+    \draw[fppblue, thin] (-0.2, 0.9) -- (-0.5, 0.3);
+    
+    \draw[fppblue, fill=fppblue] (-0.7,0.3) to [out=290,in=150] (-0.4,0.1) 
+    to [out=330,in=180] (-0.2,-0.1) to [out=0,in=220] (-0.1,-0.05)
+    to [out=40,in=190] (0.2, 0.15) to [out=10,in=260] (0.6, 0.3);
+    
+	\node [right, fppblue] at (-0.33, 0.55) {\fontsize{4}{6}\selectfont UL};
+	\node [right, fppblue] at (-0.33, 0.4) {\fontsize{4}{6}\selectfont FPP};
+	\node [right] at (-0.6, 0.1) {\fontsize{6}{6} $\textcolor{white}{\Omega}$};
+    
+    \end{tikzpicture}
+}
+
+% --- Table of Content ---
+% Might modify later (next version)
+
+% --- Sidebar of Content ---
+% Might add later (next version)

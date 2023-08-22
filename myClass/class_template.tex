@@ -1,0 +1,495 @@
+% ***********************************
+% *** Bext to compile with xetex  ***
+% *** Requires UTF-8 file format! ***
+% ***********************************
+% 
+% - Author: Aleksander Sandro GRM
+% - Date: 21/08/2023
+%
+%
+% ***************************
+% *** Beamer frame format ***
+% ***************************
+%
+\documentclass[8pt,aspectratio=169]{beamer} % 16:9
+
+%
+% - additional formats are: 169, 1610, 149, 54, 43 and 32
+%
+%\documentclass[8pt,aspectratio=43]{beamer} % (old format 4:3)
+
+%
+% *** UTF-8 coding ***
+%
+% Comment if compiled with xelatex, unless uncomment for pdflatex!
+%
+%\usepackage[utf8x]{inputenc} % needed for pdflatex
+
+%
+% *** Language setup ***
+%
+\usepackage[slovene]{babel}
+%\usepackage[english]{babel}
+
+
+% 
+% *** coloring hyper references  ***
+%
+%  In class Beamer \usepackage{hyperref} already loaded
+%
+\hypersetup{
+	colorlinks = true,
+	linkcolor = {red!50!black},
+	citecolor = {blue!50!black},
+	urlcolor = {blue!90!black}
+}
+
+
+%
+% *** Beamer ***
+%
+\usepackage{etex}
+\usepackage{wasysym}
+\usepackage{animate}
+\usepackage{xmpmulti}
+
+%
+% *** New Theme Definitions ***
+%
+
+%\useoutertheme[subsection=false]{smoothbars}
+\definecolor{royalblue1}{RGB}{72,118,255}
+\definecolor{shadowbg}{RGB}{51,51,51}
+\definecolor{titlebg}{RGB}{51,51,51}
+\definecolor{royalblue4}{RGB}{39,64,139}
+\definecolor{navyblue}{RGB}{0, 0, 127}
+\definecolor{deepcarminepink}{rgb}{0.94, 0.19, 0.22}
+
+\usetheme{Warsaw}
+\usecolortheme[RGB={72,118,255}]{structure} 
+\usetheme[height=7mm]{Rochester} 
+\setbeamertemplate{items}[ball] 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+\usefonttheme[onlymath]{serif}
+%
+\setbeamercolor{normal text}{fg=navyblue,bg=white}
+\setbeamercolor{secsubsec}{fg=white,bg=royalblue1}
+\setbeamercolor{shadow}{fg=secinhead,bg=shadowbg}
+\setbeamercolor{frametitle}{fg=white,bg=royalblue4}
+\setbeamercolor{math text}{fg=black}
+
+%
+% *** Page setup ***
+%
+\setbeamersize{text margin  left=1cm} % <- like this
+\setbeamersize{text margin right=1cm} % <- like this
+\usepackage{ragged2e}
+\justifying
+
+%
+% *** include packages ***
+%
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{empheq}
+\usepackage[many]{tcolorbox}
+\usepackage{siunitx}
+\usepackage{dirtree}
+%
+\usepackage[all,knot]{xy}
+\xyoption{arc}
+\usepackage{url}
+\usepackage{multimedia}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{xfrac}
+\usepackage{tikz}
+\usepackage{cancel}
+\usetikzlibrary{shadings}
+\usepackage{tikzsymbols}
+
+\setbeamertemplate{headline}
+{
+	\leavevmode%
+	\hbox{%
+		\begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1ex]{secsubsec}%
+			\raggedright
+			\hspace*{2em}%
+			{\bfseries\sffamily\tiny\color{white}~\insertsection\hfill\insertsubsection}%
+			%\thesection.~\insertsection\hfill\insertsubsection}%
+			\hspace*{2em}%
+		\end{beamercolorbox}%
+	}
+	%\vskip-1pt%
+	\hbox{%
+		%\tikz\draw[draw=none,top color=royalblue1,bottom color=royalblue4!60] (0,0) rectangle (\paperwidth,0.1);
+		\tikz\draw[draw=none,top color=black,bottom color=black] (0,0) rectangle (\paperwidth,0.05);
+	}%
+}
+
+\setbeamertemplate{frametitle}
+{\vskip-2.5pt
+	\leavevmode
+	\hbox{%
+		\begin{beamercolorbox}[wd=\paperwidth,ht=1.8ex,dp=1ex]{frametitle}%
+			\raggedright\hspace*{2em}\small\insertframetitle
+		\end{beamercolorbox}
+	}%
+}
+
+% clean navigation
+\setbeamertemplate{navigation symbols}{}{}
+
+% add frame number
+\newcommand*\oldmacro{}%
+\let\oldmacro\insertshorttitle%
+\renewcommand*\insertshorttitle{%
+	\oldmacro\hfill%
+	\insertframenumber\,/\,\inserttotalframenumber%
+}
+
+
+% ****************************
+% *** Numbered environment ***
+% ****************************
+\newenvironment{primer}[1][]{\noindent \textbf{Primer} }{\medskip}
+\newenvironment{sol}[1][]{\noindent \textbf{Rešitev} }{\medskip}
+
+
+% *********************
+% *** notations.tex ***
+% *********************
+\include{../notations}
+% *********************
+
+
+% ======================================
+% =========== Document start ===========
+% ======================================
+
+\title{Class Name, Part 01}
+\author[A. GRM]{}
+
+\begin{document}
+
+% ======================
+% ===== Title page =====
+% ======================
+
+\begin{frame}[plain,noframenumbering,label=titlepage]
+	\begin{center}
+		\includegraphics[width=7cm]{figs/logo/head.pdf}\\
+		\vspace{5mm}%
+		\hspace*{0mm}\rule{120mm}{1mm}\\
+		\vspace*{-2mm}%
+		\hspace*{0mm}\rule{120mm}{0.5mm}\\
+		\vspace*{2.5mm}
+		{\Huge \textbf{Ime Predmeta}}\\
+		\vspace*{0.5mm}
+		\hspace*{0mm}\rule{80mm}{0.5mm}\\
+		\vspace{2mm}
+		\large{\textbf{\textcolor{red}{Naslov predavanja}}}\\[2mm]
+		%\normalsize{\textbf{Ključne besede, če je to poterbno}}\\
+		%\vspace*{-1mm}%
+		\vspace*{-2mm}%
+		\hspace*{0mm}\rule{120mm}{0.5mm}\\
+		\vspace*{-1.5mm}%
+		\hspace*{0mm}\rule{120mm}{1mm}\\
+		\vspace*{5mm}
+		%
+		\small{\textbf{Aleksander GRM}}\\[1mm]
+		\footnotesize{\texttt{ \href{mailto:aleksander.grm@fpp.uni-lj.si}{aleksander.grm@fpp.uni-lj.si}}}\\[4mm]
+		\small{\textbf{2022/2023}}
+	\end{center}
+\end{frame}
+
+% ======================
+
+\begin{frame}[plain,noframenumbering,label=contentpage]
+	\begin{center}
+		\hspace*{0mm}\rule{130mm}{0.5mm}\\
+		\vspace{1.5mm}%
+		{\Huge \textbf{Vsebina}}\\
+		\vspace{-1mm}%
+		\hspace*{0mm}\rule{130mm}{0.5mm}
+	\end{center}
+	%
+	\vspace*{5mm}
+	%
+	\begin{minipage}[t]{5mm}
+		~
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{135mm}	
+		\normalsize
+		\tableofcontents[
+		sectionstyle=show,
+		subsectionstyle=show/show
+		]
+	\end{minipage}
+	\vfill	
+\end{frame}
+
+
+
+% =======================
+% ===== New Section =====
+% =======================
+
+\section{Matrike}
+\setcounter{section}{1}
+
+% *** Section Frame ***
+\begin{frame}[plain,noframenumbering,label=newsection]
+	\vfill
+	\begin{center}
+		\boxed{\textcolor{royalblue1}{\textbf{Poglavje -- \thesection}}}
+		
+		\vspace*{5mm}
+		\textcolor{royalblue1}{\textbf{\insertsectionhead}}
+		%\textcolor{royalblue1}{\textbf{\insertsubsectionhead}}
+	\end{center}
+	\vfill
+\end{frame}
+
+% ===================
+
+\begin{frame}
+	\frametitle{Uvod 1}
+	
+	\emphc{Problem:} Poišči \emph{presečiščno} točko treh ravnin, če je \emph{enačba} ravnine zapisana z enačbo
+	
+	\[
+	\alpha x + \beta y + \gamma z = p.
+	\]
+	
+	\emphc{Primer:} Imamo sistem treh ravnin
+	
+	\begin{equation} \label{eq:plane_system}
+		\begin{split}
+		4 x + 2 y + z & = 7\\
+		2 x + y - z & = 5\\
+		x + 2 y + 2 z & = 3
+		\end{split}	
+	\end{equation}
+	
+	kjer je potrebno poiskati skupno točko $T(x,y,z)$.
+	
+\end{frame}
+
+% *******************
+
+\begin{frame}
+	\frametitle{Prikaz delovne površine prosojnice \& največja velikost slike}
+	
+	%
+	% Največja slikovna površina pri 16:9 formatu je:
+	%  - širina L = 14.0 cm
+	%  - višina H = 7.87 cm
+	%
+	% kot kaže spodnja slika.
+	
+	\begin{center}
+		% Določanje velikosti slike:
+		% - ohranimo "aspect ratio"
+		%\includegraphics[width=13.9cm]{figs/169_frame.png} % dolžina
+		\includegraphics[height=7.7cm]{figs/169_frame.png} % višina
+		%
+		% - pokvarimo "aspect ratio"
+		%\includegraphics[width=13.9cm,height=7.8cm]{figs/169_frame.png} % višina + dolžina
+	\end{center}	
+	
+\end{frame}
+
+% *******************
+
+\begin{frame}
+	\frametitle{Uvod 1 - slika}
+	
+	Slikovna razlaga matrike kot tabele
+	
+	\vspace*{5mm}
+	\begin{minipage}{7cm}
+		\begin{center}
+			\includegraphics[height=4cm]{figs/matrix_01.png}
+		\end{center}	
+	\end{minipage}
+	\hfill
+	\begin{minipage}{7cm}
+		\begin{center}
+			\includegraphics[height=4cm]{figs/matrix_02.png}
+		\end{center}	
+	\end{minipage}
+
+\end{frame}
+
+% *******************
+
+\begin{frame}[fragile]
+	\frametitle{Code insert}
+
+	\lstinputlisting[language=Octave,style=mystyle]{figs/test.m}
+
+\end{frame}
+
+% ***************************
+% ***** New Sub-Section *****
+% ***************************
+\subsection{Naslov pod poglavja}
+
+% *** Sub-Section Frame ***
+\begin{frame}[plain,noframenumbering,label=newsubsection]
+	\vfill
+	\begin{center}
+		\textbf{\insertsubsectionhead}
+	\end{center}
+	\vfill
+\end{frame}
+
+% *******************
+
+\begin{frame}
+	\frametitle{Uvod 2}
+	
+	\emphc{Problem:} Poišči presečiščno točko treh ravnin, če je enačba ravnine zapisana z enačbo
+	
+	\[
+	\alpha x + \beta y + \gamma z = p.
+	\]
+	
+	\emphc{Primer:} Imamo sistem treh ravnin
+	
+	\begin{equation} \label{eq:plane_system}
+		\begin{split}
+			4 x + 2 y + z & = 7\\
+			2 x + y - z & = 5\\
+			x + 2 y + 2 z & = 3
+		\end{split}	
+	\end{equation}
+	
+	kjer je potrebno poiskati skupno točko $T(x,y,z)$.
+\end{frame}
+
+% *******************
+
+\begin{frame}
+	\frametitle{Uvod 3}
+	
+	\emphc{Problem:} Poišči presečiščno točko treh ravnin, če je enačba ravnine zapisana z enačbo
+	
+	\[
+	\alpha x + \beta y + \gamma z = p.
+	\]
+	
+	\emphc{Primer:} Imamo sistem treh ravnin
+	
+	\begin{equation} \label{eq:plane_system}
+		\begin{split}
+			4 x + 2 y + z & = 7\\
+			2 x + y - z & = 5\\
+			x + 2 y + 2 z & = 3
+		\end{split}	
+	\end{equation}
+	
+	kjer je potrebno poiskati skupno točko $T(x,y,z)$.
+\end{frame}
+
+
+% =======================
+% ===== New Section =====
+% =======================
+
+\section{Matrike -- Ponovno}
+
+% *** Section Frame ***
+\begin{frame}[plain,noframenumbering,label=newsection]
+	\vfill
+	\begin{center}
+		\boxed{\textcolor{royalblue1}{\textbf{Poglavje -- \thesection}}}
+		
+		\vspace*{5mm}
+		\textcolor{royalblue1}{\textbf{\insertsectionhead}}
+		%\textcolor{royalblue1}{\textbf{\insertsubsectionhead}}
+	\end{center}
+	\vfill
+\end{frame}
+
+% ===================
+
+\begin{frame}
+	\frametitle{Uvod 1}
+	
+	\emphc{Problem:} Poišči \emph{presečiščno} točko treh ravnin, če je \emph{enačba} ravnine zapisana z enačbo
+	
+	\[
+	\alpha x + \beta y + \gamma z = p.
+	\]
+	
+	\emphc{Primer:} Imamo sistem treh ravnin
+	
+	\begin{equation} \label{eq:plane_system}
+		\begin{split}
+			4 x + 2 y + z & = 7\\
+			2 x + y - z & = 5\\
+			x + 2 y + 2 z & = 3
+		\end{split}	
+	\end{equation}
+	
+	kjer je potrebno poiskati skupno točko $T(x,y,z)$.
+	
+\end{frame}
+
+% *******************
+
+\begin{frame}
+	\frametitle{Prikaz delovne površine prosojnice \& največja velikost slike}
+	
+	%
+	% Največja slikovna površina pri 16:9 formatu je:
+	%  - širina L = 14.0 cm
+	%  - višina H = 7.87 cm
+	%
+	% kot kaže spodnja slika.
+	
+	\begin{center}
+		% Določanje velikosti slike:
+		% - ohranimo "aspect ratio"
+		%\includegraphics[width=13.9cm]{figs/169_frame.png} % dolžina
+		\includegraphics[height=7.7cm]{figs/169_frame.png} % višina
+		%
+		% - pokvarimo "aspect ratio"
+		%\includegraphics[width=13.9cm,height=7.8cm]{figs/169_frame.png} % višina + dolžina
+	\end{center}	
+	
+\end{frame}
+
+% ======================
+% ===== References =====
+% ======================
+
+\section*{Literatura}
+
+\begin{frame}[plain,noframenumbering,label=references]
+	\vfill
+	\begin{center}
+		\textcolor{royalblue1}{\textbf{\Large Literatura}}
+	\end{center}
+	\vfill
+\end{frame}
+
+% ======================
+	
+\begin{frame}[plain]
+	\frametitle{Literatura}
+	\begin{itemize}
+		\item G.~James, \emph{Modern Engineering Mathematics}, 2015, 5th Edition
+		\item A.~Turnšek, \emph{Tehniška matematika}, 2007, 2.izdaja
+	\end{itemize}
+\end{frame}
+
+\end{document} 
