@@ -3,6 +3,7 @@
 % Author: Aleksander GRM
 % Description: This is an unofficial UL-FPP I made from scratch. Feel free to use it, modify it, share it.
 % Version: 1.0
+% Date: 04/09/2023
 
 \documentclass[aspectratio=169]{beamer}
 % ******************************************************
@@ -37,6 +38,7 @@
 \usepackage[many]{tcolorbox}
 \usepackage{siunitx}
 \usepackage{listings}
+\usepackage{booktabs} % publication quality tables
 %
 \usepackage[all,knot]{xy}
 \xyoption{arc}
@@ -113,6 +115,8 @@
 {\setbeamertemplate{footline}{} 
 \frame{\titlepage}}
 
+\setcounter{tocdepth}{1}
+% \setcounter{tocdepth}{2} % include subsections
 \section*{Outline}
 	\begin{frame}{Outline}
 		\tableofcontents

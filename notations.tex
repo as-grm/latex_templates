@@ -2,7 +2,7 @@
 %       *** Latex additions ***
 % 
 % - Author: aleksander.grm@fpp.uni-lj.si 
-% - Date: 21/08/2023 (last modified)
+% - Date: 04/09/2023 (last modified)
 
 %
 % *** Needed packages ***
@@ -30,21 +30,22 @@
 \newcommand{\id}{\mathrm{id}} % identity mapping
 \renewcommand{\dim}{\mathrm{dim}} % dimension
 %\newcommand{\dim}[1]{\text{\textsc{dim}}\left(#1\right)} 
-\newcommand{\adj}[0]{\mathrm{adj}} % adjoint or adjugate matrix
-\newcommand{\rank}[0]{\mathrm{rk}} % rank
+\newcommand{\adj}[1]{\mathrm{adj}(#1)} % adjoint or adjugate matrix
+\newcommand{\rank}[1]{\mathrm{rk}(#1)} % rank
 \newcommand{\determ}[1]{\mathrm{det}(#1)} % determinant
 \newcommand{\scp}[2]{\langle #1 , #2 \rangle}
 \newcommand{\kernel}[0]{\mathrm{ker}} % kernel/nullspace
 \newcommand{\img}[0]{\mathrm{Im}} % image
 \newcommand{\idx}[1]{{(#1)}} % index
-\DeclareMathOperator*{\diag}{diag} % diagonal operator
+\newcommand{\diag}[1]{{\mathrm{diag}(#1)}} % diagonal operator
+\newcommand{\cov}[1]{{\mathrm{cov}(#1)}} % covariance (matrix) 
 \newcommand{\mean}{\mathds{E}} % expectation
 \newcommand{\var}{\mathds{V}} % variance
 \newcommand{\gauss}[2]{\mathcal{N}\big(#1,\,#2\big)} % gaussian distribution N(.,.)
 \newcommand{\gaussx}[3]{\mathcal{N}\big(#1\,|\,#2,\,#3\big)} % gaussian distribution N(.|.,.)
 \newcommand{\gaussBig}[2]{\mathcal{N}\left(#1,\,#2\right)} % see above, but with brackets that adjust to the height of the arguments
 \newcommand{\gaussxBig}[3]{\mathcal{N}\left(#1\,|\,#2,\,#3\right)} % see above, but with brackets that adjust to the height of the arguments
-\DeclareMathOperator{\cov}{Cov} % covariance (matrix) 
+
 \newcommand{\T}[0]{^\top} % transpose
 \newcommand{\imu}[0]{\mathrm{i}} % complex unit i
 \newcommand{\matdet}[1]{\left|\begin{matrix}#1\end{matrix}\right|} % determinant of a matrix
