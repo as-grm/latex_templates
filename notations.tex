@@ -15,9 +15,10 @@
 %\newcommand*{\point}[1]{\vec{\mkern0mu#1}}
 \newcommand{\ci}[0]{\perp\!\!\!\!\!\perp} % conditional independence
 \newcommand{\point}[1]{{#1}} % points 
-\renewcommand{\vec}[1]{{\boldsymbol{{#1}}}}  % math vector
-\newcommand{\uvec}[1]{{\mathbf{\hat{{#1}}}}} % unit vector
-\newcommand{\mat}[1]{{\boldsymbol{{#1}}}}    % matrix
+\renewcommand{\vec}[1]{\boldsymbol{#1}}  % math vector
+\newcommand{\uvec}[1]{\mathbf{\hat{#1}}} % unit vector
+%\newcommand{\mat}[1]{\boldsymbol{#1}}    % matrix
+\newcommand{\mat}[1]{\boldsymbol{\mathsf{#1}}}    % matrix
 \newcommand{\RR}[0]{\mathbb{R}} % real numbers
 \newcommand{\ZZ}[0]{\mathbb{Z}} % integers
 \newcommand{\NN}[0]{\mathbb{N}} % natural numbers
@@ -33,8 +34,9 @@
 \newcommand{\adj}[1]{\mathrm{adj}(#1)} % adjoint or adjugate matrix
 \newcommand{\rank}[1]{\mathrm{rk}(#1)} % rank
 \newcommand{\determ}[1]{\mathrm{det}(#1)} % determinant
+%\renewcommand{\det}[1]{\mathrm{det}(#1)} % determinant
 \newcommand{\scp}[2]{\langle #1 , #2 \rangle}
-\newcommand{\kernel}[0]{\mathrm{ker}} % kernel/nullspace
+\newcommand{\kernel}[1]{\mathrm{ker}({#1})} % kernel/nullspace
 \newcommand{\img}[0]{\mathrm{Im}} % image
 \newcommand{\idx}[1]{{(#1)}} % index
 \newcommand{\diag}[1]{{\mathrm{diag}(#1)}} % diagonal operator
@@ -242,4 +244,17 @@
 %  \lstinputlisting[language=Octave,style=mystyle]{BitXorMatrix.m}
 %
 %\end{frame}
+
+
+% ******************************
+% *** Definicija slo za math ***
+% ******************************
+\newtheorem{izrek}{Izrek}
+\newtheorem{lema}[izrek]{Lema}
+\newtheorem{trditev}[izrek]{Trditev}
+\newtheorem{posledica}[izrek]{Posledica}
+\newtheorem{definicija}[izrek]{Definicija}
+\newtheorem{vaja}[izrek]{Vaja}
+
+
 
