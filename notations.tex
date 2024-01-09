@@ -2,7 +2,7 @@
 %       *** Latex additions ***
 % 
 % - Author: aleksander.grm@fpp.uni-lj.si 
-% - Date: 04/12/2023 (last modified)
+% - Date: 09/01/2024 (last modified)
 
 %
 % *** Needed packages ***
@@ -33,6 +33,7 @@
 %\newcommand{\dim}[1]{\text{\textsc{dim}}\left(#1\right)} 
 \newcommand{\adj}[1]{\mathrm{adj}(#1)} % adjoint or adjugate matrix
 \newcommand{\rank}[1]{\mathrm{rk}(#1)} % rank
+\newcommand{\trace}[1]{\mathrm{sl}(#1)} % trace ali sled
 \newcommand{\determ}[1]{\mathrm{det}(#1)} % determinant
 %\renewcommand{\det}[1]{\mathrm{det}(#1)} % determinant
 \newcommand{\scp}[2]{\langle #1 , #2 \rangle}
@@ -52,10 +53,14 @@
 \newcommand{\imu}[0]{\mathrm{i}} % complex unit i
 \newcommand{\matdet}[1]{\left|\begin{matrix}#1\end{matrix}\right|} % determinant of a matrix
 \newcommand{\vecnorm}[1]{\lVert#1\rVert}
-\newcommand{\absval}[1]{\lvert#1\rvert}
+\newcommand{\absval}[1]{\left|#1\right|}
 \newcommand{\scaprod}[2]{\langle #1, #2 \rangle_0}
 \newcommand{\operator}[2]{\operatorname{#1}\left[#2\right]}
-\newcommand{\order}[2]{\mathcal{O}({#1}^{#2})}
+\newcommand{\order}[1]{\mathcal{O}(#1)}
+\newcommand{\vertat}[2]{\left.#1\:\right|_{#2}}
+\newcommand{\longprt}[2]{\frac{\prt #1}{\prt #2}}
+\newcommand{\longprtt}[2]{\frac{\prt^2 #1}{\prt #2^2}}
+
 
 %
 % *** Arc notations ***
@@ -141,12 +146,7 @@
 % *** Trade names, Copy right... ***
 %
 % \textsuperscript \textsubscript
-\newcommand{\matlab}{\textit{\texttt{MatLab}}\textsuperscript{\textregistered} }
-\renewcommand{\python}{\textit{\texttt{Python}}\textsuperscript{\textregistered} }
-\newcommand{\numpy}{\textit{\texttt{NumPy}}\textsuperscript{\textregistered} }
-\newcommand{\scipy}{\textit{\texttt{SciPy}}\textsuperscript{\textregistered} }
-\newcommand{\mplpy}{\textit{\texttt{MatPlotLib}}\textsuperscript{\textregistered} }
-\newcommand{\sage}{\textit{\texttt{SageMath}}\textsuperscript{\textregistered} }
+\newcommand{\matlab}{\texttt{MatLab}\textsuperscript{\textregistered} }
 
 
 % ***********************************************
@@ -202,7 +202,7 @@
 	% 	c_i = \sum_j A_{ij}
 	% \end{empheq}
 %
-% \begin{empheq}[box={\mybluebox[5pt][-2pt]}]{equation*}
+% \begin{empheq}[box={\mybluebox[2pt][2pt]}]{equation*}
 	%	c_i = \langle\psi|\phi\rangle
 	% \end{empheq}
 
@@ -263,3 +263,16 @@
 
 
 
+% ********************
+% !!!!! Examples !!!!!
+% ********************
+
+% 1. Minpage with top
+%
+%\begin{minipage}[t]{7cm}
+%	\vspace{0pt}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[t]{7cm}
+%	\vspace{0pt}
+%\end{minipage}
