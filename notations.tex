@@ -2,7 +2,7 @@
 %       *** Latex additions ***
 % 
 % - Author: aleksander.grm@fpp.uni-lj.si 
-% - Date: 09/01/2024 (last modified)
+% - Date: 02/03/2024 (last modified)
 
 %
 % *** Needed packages ***
@@ -99,7 +99,7 @@
 \newcommand{\KN}{\text{\textsl{Kn}}}
 %\newcommand{\half}{\sfrac{1}{2}}
 \newcommand{\half}{1/2}
-\newcommand{\emphc}[1]{\textcolor{deepcarminepink}{\textbf{#1}}}
+
 
 %
 % *** tabular ***
@@ -111,25 +111,21 @@
 % *** various color definitions ***
 %
 \definecolor{darkgreen}{rgb}{0,0.6,0}
-%
-\newcommand{\blue}[1]{{\color{blue}#1}}
-\newcommand{\red}[1]{{\color{red}#1}}
-\newcommand{\green}[1]{{\color{darkgreen}#1}}
-\newcommand{\orange}[1]{{\color{orange}#1}}
-\newcommand{\magenta}[1]{{\color{magenta}#1}}
-\newcommand{\cyan}[1]{{\color{cyan}#1}}
-%
 \definecolor{royalblue1}{RGB}{72,118,255}
 \definecolor{shadowbg}{RGB}{51,51,51}
 \definecolor{titlebg}{RGB}{51,51,51}
 \definecolor{royalblue4}{RGB}{39,64,139}
 \definecolor{navyblue}{RGB}{0, 0, 127}
 \definecolor{deepcarminepink}{rgb}{0.94, 0.19, 0.22}
+\definecolor{navy}{rgb}{0.177,0.349,0.529}
+\definecolor{navylight}{rgb}{0.761,0.828,0.894}
 
 %
 % *** redefine EMPH types ***
 %
-\renewcommand{\emph}[1]{\blue{\bf{#1}}}
+\newcommand{\missing}[1]{\textcolor{red}{\textbf{???#1???}}}
+\newcommand{\emphc}[1]{\textcolor{blue}{\textbf{#1}}}
+\newcommand{\emphcb}[1]{\textcolor{deepcarminepink}{\textbf{#1}}}
 \newcommand{\myfig}[1]{\iflanguage{english}{\textbf{Figure}}{\textbf{Slika}} #1}
 \newcommand{\myeq}[1]{\iflanguage{english}{\textbf{Eq.}}{\textbf{En.}} (#1)}
 
