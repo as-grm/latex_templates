@@ -86,10 +86,14 @@
 \newcommand{\circled}[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
 %
-% *** Special keywords
+% *** Trade names, Copy right... ***
 %
-\newcommand{\cpp}{\textbf{\texttt{c++}}}
-\newcommand{\python}{\textbf{\texttt{python}}}
+% \textsuperscript \textsubscript
+\newcommand{\matlab}{\texttt{MatLab}\textsuperscript{\textregistered}}
+\newcommand{\cpp}{\texttt{c++}\textsuperscript{\textregistered}}
+\newcommand{\python}{\texttt{Python}\textsuperscript{\textregistered}}
+\newcommand{\scipy}{\texttt{SciPy}\textsuperscript{\textregistered}}
+\newcommand{\sympy}{\texttt{SymPy}\textsuperscript{\textregistered}}
 
 %
 % *** dimension less numbers, and other numbers ***
@@ -119,6 +123,8 @@
 \definecolor{deepcarminepink}{rgb}{0.94, 0.19, 0.22}
 \definecolor{navy}{rgb}{0.177,0.349,0.529}
 \definecolor{navylight}{rgb}{0.761,0.828,0.894}
+\definecolor{myblue}{rgb}{.9, .9, 1}
+\definecolor{lightblue}{rgb}{.9, .9, .5}
 
 %
 % *** redefine EMPH types ***
@@ -138,12 +144,6 @@
 	}%
 }%
 
-%
-% *** Trade names, Copy right... ***
-%
-% \textsuperscript \textsubscript
-\newcommand{\matlab}{\texttt{MatLab}\textsuperscript{\textregistered} }
-
 
 % ***********************************************
 % *** Blocks: block, exampleblock, alertblock ***
@@ -152,9 +152,6 @@
 %
 % *** Blocks: block, exampleblock, alertblock ***
 %
-%\definecolor{shadowbga}{RGB}{51,51,51}
-\definecolor{myblue}{rgb}{.9, .9, 1}
-\definecolor{lightblue}{rgb}{.9, .9, .5}
 %\newcommand*\mybluebox[1]{%
 	%	\colorbox{myblue}{\hspace{1em}#1\hspace{1em}}}
 
