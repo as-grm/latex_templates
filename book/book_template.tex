@@ -5,7 +5,8 @@
 % Description: This is an unofficial book tmplate I made from scratch. 
 %              Feel free to use it, modify it, share it.
 % Version: 1.1
-% Date: 04/09/2023
+% Date: 02/05/2024
+% URL: https://github.com/as-grm/latex_templates
 % **********************************************************************
 
 
@@ -13,19 +14,44 @@
 % *** page style ***
 %
 \documentclass[11pt,twosided]{book}
-%
 % ******************
+
+
+% ************************************************************
+% *** Macros specific for latex / pdflatex / xetex engines ***
+% ************************************************************ 
+% 
+\usepackage{ifpdf,ifxetex,ifluatex} 
+%
+% *** pdflatex ***
+\ifpdf
+\usepackage[pdftex]{hyperref} % hyperref
+\usepackage[utf8x]{inputenc}  % utf-8 support 
+\usepackage[T1]{fontenc}      % necessary
+\fi
+%
+% *** lualatex ***
+\ifluatex 
+\usepackage[luatex]{hyperref} % hyperref
+\usepackage{fontspec}         % utf-8 support 
+\fi
+%
+% *** xelatex ***
+\ifxetex  
+\usepackage[xetex]{hyperref}   % xelatex (default)
+\usepackage{fontspec}
+%
+% *** latex - latex + dvips + ps2pdf ***
+\else          
+\usepackage[dvips]{hyperref}  % hyperref
+\usepackage[utf8x]{inputenc}  % utf-8 support 
+\fi
 
 
 % ******************************************
 % *** hyper references must be set first ***
 % ******************************************
 %
-% *** choose a correct version with used compiler ***
-%
-%\usepackage[dvips]{hyperref}  % latex + dvips + ps2pdf
-%\usepackage[pdftex]{hyperref} % pdflatex
-\usepackage[xetex]{hyperref}   % xelatex (default)
 \hypersetup{
 	colorlinks = true,
 	linkcolor = {red!50!black},
@@ -33,16 +59,6 @@
 	urlcolor = {blue!80!black}
 }
 
-
-% ********************************************************
-% *** Compile with xelatex requires UTF-8 file format! ***
-% ********************************************************
-% 
-% *** UTF-8 coding
-% 
-% Comment if copiled with xelatex, unless uncomment for pdflatex!
-%
-%\usepackage[utf8x]{inputenc} % needed for pdflatex
 
 
 % ************************
@@ -63,12 +79,12 @@
 %
 \usepackage{geometry}
 \geometry{
-	paperwidth=175mm,
-	paperheight=255mm,
+	paperwidth=160mm,
+	paperheight=225mm,
 	left=25mm,
-	width=125mm,
+	width=115mm,
 	top=25mm,
-	height=205mm
+	height=180mm
 }
 %
 % *** Crop marks ***
@@ -81,15 +97,14 @@
 %
 %Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
 \usepackage[Bjornstrup]{fncychap}
-%\usepackage[Conny]{fncychap}
 %
 \usepackage{titlesec}
 \titleformat{\section}
 {\normalfont\sffamily\Large\bfseries}
-{\thesection}{1em}
+{\thesection}{1em}{}
 \titleformat{\subsection}
 {\normalfont\sffamily\large\bfseries}
-{\thesubsection}{1em}
+{\thesubsection}{1em}{}
 
 
 %
@@ -109,7 +124,17 @@
 \usepackage{datetime}
 \usepackage{fancyhdr}
 \usepackage{emptypage}
-\usepackage{booktabs} % publication quality tables
+
+
+%
+% *** colored boxes ***
+%
+\usepackage{tcolorbox} 
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{mydefinition}{Definicija}{colback=navyblue!25!white,colframe=navyblue,fonttitle=\bfseries}{def}
+\newtcbtheorem[number within=section]{mylema}{Lema}{colback=navyblue!25!white,colframe=navyblue,fonttitle=\bfseries}{lem}
+\newtcbtheorem[number within=section]{mytheorem}{Izrek}{colback=deepcarminepink!25!white,colframe=deepcarminepink,fonttitle=\bfseries}{thm}
+
 %
 % registered - \textregistered
 % copyright  - \textcopyright
@@ -125,6 +150,8 @@
 \usepackage{bm}
 \usepackage{xfrac}
 \usepackage{cancel}
+\usepackage{wasysym} % Solar system symbols
+\usepackage{booktabs} % fancy tables
 
 %
 % *** Drawing tools ***
@@ -147,16 +174,33 @@
 %
 % *** Numbered environment ***
 %
-%\newenvironment{naloga}[1][]{\noindent \textbf{Naloga} }{\medskip}
-\newenvironment{primer}[1][]{\noindent \textbf{Primer.}  }{\medskip}
-\newenvironment{resitev}[1][]{\noindent \textbf{Rešitev.}  }{\medskip}
-
+% - naloga
+\newcounter{nalogactr}
+\newenvironment{naloga}{%          define a custom environment
+	\bigskip\noindent%             create a vertical offset to previous material
+	\refstepcounter{nalogactr}%    increment the environment's counter
+	\textbf{Naloga~\thenalogactr}% or \textbf, \textit, ...
+	\newline%
+}{\par\medskip}%                   create a vertical offset to following material: \par\bigskip, \medskip
+\numberwithin{nalogactr}{chapter}
 %
-% *** Examples ***
+% - primer
+\newcounter{primerctr}
+\newenvironment{primer}{%           
+	\refstepcounter{primerctr}%
+	\par\bigskip\noindent%   
+	\textbf{Primer~\theprimerctr}% 
+	\par%
+}{\ignorespaces}%                    
+\numberwithin{primerctr}{chapter}
 %
-\theoremstyle{definition}
-\newtheorem{exmp}{}[section]
-\newtheorem{naloga}{Naloga}[section]
+% - rešitev
+\newenvironment{resitev}[1][]{%
+	%\ignorespaces%
+	\medskip\par
+	\rule{0.5cm}{0.5pt}\hspace*{2mm}\textit{Rešitev}\hspace*{2mm}\rule{0.5cm}{0.5pt}%
+	\ignorespaces%
+}{\ignorespaces\rule{\textwidth}{0.5pt}\bigskip\par}
 
 
 %

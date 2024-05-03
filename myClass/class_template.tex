@@ -1,12 +1,14 @@
-% ***********************************
-% *** Bext to compile with xetex  ***
-% *** Requires UTF-8 file format! ***
-% ***********************************
-% 
-% - Author: Aleksander Sandro GRM
-% - Date: 05/01/2024
-%
-%
+% **********************************************************************
+% Copyright 2023 Aleksander GRM
+
+% Author: Aleksander GRM @fpp.uni-lj.si
+% Description: This is an unofficial Beamer Class template I made from scratch. 
+%              Feel free to use it, modify it, and share it.
+% Version: 1.0
+% Date: 02/05/2024
+% URL: https://github.com/as-grm/latex_templates
+% **********************************************************************
+
 % ***************************
 % *** Beamer frame format ***
 % ***************************
@@ -18,32 +20,35 @@
 %
 %\documentclass[8pt,aspectratio=43]{beamer} % (old format 4:3)
 
-%
-% *** UTF-8 coding ***
-%
-% Comment if compiled with xelatex, unless uncomment for pdflatex!
-%
-%\usepackage[utf8x]{inputenc} % needed for pdflatex
 
-%
-% *** Language setup ***
-%
-\usepackage[slovene]{babel}
-%\usepackage[english]{babel}
+% ************************************************************
+% *** Compile engines:
+%     - latex: latex + dvipd + ps2pdf
+%     - pdflatex: works fine
+%     - xelatex: works fine
+%     - lualatex: some pdf problems must be fixed
+% ************************************************************ 
 
 
-% 
-% *** coloring hyper references  ***
-%
-%  In class Beamer \usepackage{hyperref} already loaded
+% ******************************************
+% *** hyper references must be set first ***
+% ******************************************
 %
 \hypersetup{
 	colorlinks = true,
 	linkcolor = {red!50!black},
 	citecolor = {blue!50!black},
-	urlcolor = {blue!90!black}
+	urlcolor = {blue!80!black}
 }
 
+
+% ************************
+% *** Language support ***
+% ************************
+%
+\usepackage[slovene]{babel}
+%\usepackage[english]{babel}
+% ************************
 
 %
 % *** Beamer ***

@@ -1,22 +1,32 @@
-% Copyright 2019 Aleksander GRM
+% **********************************************************************
+% Copyright 2023 Aleksander GRM
 
-% Author: Aleksander GRM
-% Description: This is an unofficial UL-FPP I made from scratch. Feel free to use it, modify it, share it.
+% Author: Aleksander GRM @fpp.uni-lj.si
+% Description: This is an unofficial UL-FPP I made from scratch.
+%              Feel free to use it, modify it, and share it.
 % Version: 1.0
-% Date: 04/09/2023
+% Date: 02/05/2024
+% URL: https://github.com/as-grm/latex_templates
+% **********************************************************************
+
 
 \documentclass[aspectratio=169]{beamer}
-% ******************************************************
-% *** Compile with xetex requires UTF-8 file format! ***
-% ******************************************************
-% 
-% *** UTF-8 coding
-% 
-% Comment if compiled with xetex, unless uncomment for pdflatex!
 %
-%\usepackage[utf8x]{inputenc} % uncoment for pdfLaTeX
+% - additional formats are: 169, 1610, 149, 54, 43 and 32
+
+
+% ************************************************************
+% *** Compile engines:
+%     - latex: latex + dvipd + ps2pdf
+%     - pdflatex: works fine
+%     - xelatex: works fine
+%     - lualatex: some pdf problems must be fixed
+% ************************************************************ 
+
+
 %\usepackage[slovene]{babel}
 \usepackage[english]{babel}
+
 
 %
 % *** Beamer ***
@@ -105,7 +115,7 @@
 % ******************
 
 \title{\textcolor{myblue}{\textbf{Mathematical and Computational Modelling}}}
-\titlegraphic{\includegraphics[width=6.0cm]{Theme/Logos/fpp_logo_navy.pdf}}
+\titlegraphic{\includegraphics[width=8.0cm]{Theme/Logos/fpp_logo_vertical.pdf}}
 \author{\textcolor{myblue}{\textbf{Aleksander GRM}}}
 \institute{}
 \date{\small April, 2019} %\today
