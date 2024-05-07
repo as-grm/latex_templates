@@ -14,6 +14,7 @@
 % *** Needed packages ***
 %
 \usepackage{dsfont}
+\usepackage{siunitx}
 
 %
 % *** New Commands ***
@@ -70,25 +71,34 @@
 
 %
 % *** Arc notations ***
-% Use it only in math mode \[ ... \]
 %
-\newcommand{\txtdeg}{\si{\degree}}
-\newcommand{\txtmin}{\si{\arcmiute}}
-\newcommand{\txtsec}{\si{\arcsecond}}
-\newcommand{\arcdeg}[1]{\SI{#1}{\degree}} 
-\newcommand{\arcmin}[1]{\SI{#1}{\arcminute}} 
-\newcommand{\arcsec}[1]{\SI{#1}{\arcsecond}}
-\newcommand{\posdm}[2]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}}
-\newcommand{\posdmo}[3]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}\:\text{#3}}
-\newcommand{\posdms}[3]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}\:\SI{#3}{\arcsecond}}
+% !! Use it only in math mode \[ ... \] !!
+%
+%\newcommand{\txtdeg}{\unit{\degree}}    % use \arcdeg
+%\newcommand{\txtmin}{\unit{\arcmiute}}  % use \arcmin
+%\newcommand{\txtsec}{\unit{\arcsecond}} % use \arcsec 
+\newcommand{\arcdeg}[1]{\qty{#1}{\degree}} 
+\newcommand{\arcmin}[1]{\qty{#1}{\arcminute}} 
+\newcommand{\arcsec}[1]{\qty{#1}{\arcsecond}}
+\newcommand{\degdec}[1]{\qty[group-digits = none]{#1}{\degree}}
+\newcommand{\degmin}[2]{\qty{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}}
+\newcommand{\degminsec}[3]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2]{#2}{\arcminute}\:\qty[minimum-integer-digits = 2]{#3}{\arcsecond}}
+
+% this shoud be replaced in future with \degmin, \Lat, \Long
+\newcommand{\posdm}[2]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}}
+\newcommand{\posdmo}[3]{\posdm{#1}{#2}\:\text{#3}}
+\newcommand{\posdms}[3]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2]{#2}{\arcminute}\:\qty[minimum-integer-digits = 2]{#3}{\arcsecond}}
+
 
 %
 % *** Navigational formats ***
 %
-\newcommand{\lat}[3]{\SI[minimum-integer-digits = 2]{#1}{\degree}\:\SI[minimum-integer-digits = 2]{#2}\:{\arcminute}\:\text{#3}}
-\newcommand{\long}[1]{\SI[minimum-integer-digits = 3]{#1}{\degree}\:\SI[minimum-integer-digits = 2]{#2}\:{\arcminute}\:\text{#3}}
-\newcommand{\azimuth}[1]{\SI[minimum-integer-digits = 3]{#1}{\degree}}
-\newcommand{\altitide}[1]{\SI[minimum-integer-digits = 2]{#1}{\degree}\:\SI[minimum-integer-digits = 2]{#2}}
+% !! Use it only in math mode \[ ... \] !!
+%
+\newcommand{\Lat}[3]{\qty[minimum-integer-digits = 2]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}\:\text{#3}}
+\newcommand{\Long}[3]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}\:\text{#3}}
+\newcommand{\Az}[1]{\qty[minimum-integer-digits = 3, minimum-decimal-digits = 1]{#1}{\degree}}
+\newcommand{\Alt}[2]{\qty[minimum-integer-digits = 2]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}}
 
 
 %
