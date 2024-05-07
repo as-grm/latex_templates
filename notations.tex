@@ -83,6 +83,13 @@
 \newcommand{\posdms}[3]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}\:\SI{#3}{\arcsecond}}
 
 %
+% *** Navigational formats ***
+%
+\newcommand{\azimuth}[1]{\SI[minimum-integer-digits = 3]{#1}{\degree}}
+\newcommand{\lat}[3]{\SI[minimum-integer-digits = 2]{#1}{\degree}\:\SI[minimum-integer-digits = 2]{#2}\:{\arcminute}\:\text{#3}}
+\newcommand{\long}[1]{\SI[minimum-integer-digits = 3]{#1}{\degree}\:\SI[minimum-integer-digits = 2]{#2}\:{\arcminute}\:\text{#3}}
+
+%
 % *** some shotcuts, bolded symbols, fnacy style, ... ***
 %
 \newcommand{\mc}{\mathcal}
