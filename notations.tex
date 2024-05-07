@@ -75,12 +75,12 @@
 \newcommand{\txtdeg}{\si{\degree}}
 \newcommand{\txtmin}{\si{\arcmiute}}
 \newcommand{\txtsec}{\si{\arcsecond}}
-%\newcommand{\arcdeg}[1]{\si{\ang{#1;;}}}  % instead use \SI{val}{\degree}
-%\newcommand{\arcmin}[1]{\si{\ang{;#1;}}}  % instead use \SI{val}{\arcminute}
-%\newcommand{\arcsec}[1]{\si{\ang{;;#1}}}  % instead use \SI{val}{\arcsecond}
+\newcommand{\arcdeg}[1]{\SI{#1}{\degree}}} 
+\newcommand{\arcmin}[1]{\SI{#1}{\arcminute}} 
+\newcommand{\arcsec}[1]{\SI{#1}{\arcsecond}}
 \newcommand{\posdm}[2]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}}
 \newcommand{\posdmo}[3]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}\:\text{#3}}
-\newcommand{\posdms}[3]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}\:\SI{#2}{\arcsecond}}
+\newcommand{\posdms}[3]{\SI{#1}{\degree}\:\SI{#2}{\arcminute}\:\SI{#3}{\arcsecond}}
 
 %
 % *** some shotcuts, bolded symbols, fnacy style, ... ***
