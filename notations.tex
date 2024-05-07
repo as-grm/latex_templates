@@ -70,7 +70,7 @@
 
 
 %
-% *** Arc notations ***
+% *** Fancy arc formats ***
 %
 % !! Use it only in math mode \[ ... \] !!
 %
@@ -85,13 +85,13 @@
 \newcommand{\degminsec}[3]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2]{#2}{\arcminute}\:\qty[minimum-integer-digits = 2]{#3}{\arcsecond}}
 
 % this shoud be replaced in future with \degmin, \Lat, \Long
-\newcommand{\posdm}[2]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}}
-\newcommand{\posdmo}[3]{\posdm{#1}{#2}\:\text{#3}}
-\newcommand{\posdms}[3]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2]{#2}{\arcminute}\:\qty[minimum-integer-digits = 2]{#3}{\arcsecond}}
+\newcommand{\posdm}[2]{\degmin{#1}{#2}}
+\newcommand{\posdmo}[3]{\degmin{#1}{#2}\:\text{#3}}
+\newcommand{\posdms}[3]{\degminsec{#1}{#2}{#3}}
 
 
 %
-% *** Navigational formats ***
+% *** Fancy Navigational formats ***
 %
 % !! Use it only in math mode \[ ... \] !!
 %
@@ -274,6 +274,9 @@
 % ******************************
 % *** Definicija slo za math ***
 % ******************************
+%
+% s tem previdno, samo za SLO okolje !
+%
 %\newtheorem{izrek}{Izrek}
 %\newtheorem{lema}[izrek]{Lema}
 %\newtheorem{trditev}[izrek]{Trditev}
