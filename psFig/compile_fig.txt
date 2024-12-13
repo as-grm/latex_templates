@@ -5,7 +5,7 @@ $> ./compile_fig.sh psTricks_template
 
 Compile_fig.sh izvede naslednje ukaze prevajanja
  - latex psTricks_template.tex
- - dvips psTricks_template.dvips
+ - dvips psTricks_template.dvi
  - ps2pdf -dALLOWPSTRANSPARENCY psTricks_template.ps
 
  Na koncu počisti vso nesnago in pusti samo pdf datoteko.
