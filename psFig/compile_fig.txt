@@ -1,0 +1,11 @@
+Primer datoteke je psTricks_template.tex
+
+Za prevajanje uporabi makro compile_fig.sh kamor postaviš kot parameter ime fajla brez končnice tex
+$> ./compile_fig.sh psTricks_template
+
+Compile_fig.sh izvede naslednje ukaze prevajanja
+ - latex psTricks_template.tex
+ - dvips psTricks_template.dvi
+ - ps2pdf -dALLOWPSTRANSPARENCY psTricks_template.ps
+
+ Na koncu počisti vso nesnago in pusti samo pdf datoteko.

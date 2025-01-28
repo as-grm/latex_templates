@@ -1,0 +1,124 @@
+\documentclass[8pt]{standalone}
+%\documentclass[border=2pt,8pt]{standalone}
+%
+\usepackage{amsmath}
+%
+\usepackage[dvipsnames]{pstricks}
+\usepackage{color}
+\usepackage{pst-plot}
+\usepackage{pst-tree}
+\usepackage{pst-eps}
+\usepackage{pst-text}
+\usepackage{multido}
+\usepackage{pst-node}
+\usepackage{pst-eps}
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+\usepackage{siunitx}
+
+%
+
+\begin{document}
+	
+	\def\Ra{6}
+	\def\Rb{2.4}
+	\def\Rea{6}
+	\def\Reb{2}
+	\def\Ras{2.7}
+	\def\ang{20}
+	\pgfmathsetmacro\Rasin{\Ra*sin(\ang)}
+	\pgfmathsetmacro\Racos{\Ra*cos(\ang)}
+	\pgfmathsetmacro\Rassin{\Ras*sin(\ang)}
+	\pgfmathsetmacro\Rascos{\Ras*cos(\ang)}
+	\pgfmathsetmacro\Rcsin{3.7*sin(\ang)}
+	\pgfmathsetmacro\Rccos{3.7*cos(\ang)}
+	
+	\begin{pspicture}(-6.5,-6.5)(6.5,6.5)
+	%
+	%\begin{pspicture}(-7.5,-7.5)(7.5,7.5)
+	%\psgrid[griddots=10,subgriddots=3,gridlabelcolor=red](-7,-7)(7,7)
+	
+	%
+	% global settings
+	%	
+	\psset{linewidth=0.3pt}
+	
+	%
+	% Front circle
+	%
+	\pscircle[linewidth=0.8pt](0,0){\Ra}
+	\pscircle[linewidth=0.8pt](0,0){2}
+	\psline[linestyle=solid](0,-2.6)(0,2.6)
+	
+	%
+	% Horizontal circle
+	%
+	%\psellipse[fillstyle=solid,fillcolor=green,opacity=0.2](0,0)(\Ra,\Rb)
+	\psellipticarc[linewidth=0.8pt,linestyle=solid](0,0)(\Ra,3.2){180}{360}
+	\psellipticarc[linewidth=0.8pt,linestyle=dotted](0,0)(\Ra,3.2){0}{180}
+	%
+	\psellipticarc[linewidth=0.8pt,linestyle=solid](0,0)(2,1){180}{360}
+	\psellipticarc[linewidth=0.8pt,linestyle=dotted](0,0)(2,1){0}{180}
+	\psline[linestyle=solid](-2,0)(2,0)
+	%
+	\psellipticarc[linewidth=0.3pt,linestyle=solid,linecolor=green](0,1.13)(1.6,0.7){175}{365}
+	
+	%
+	% Vertical circle
+	%
+	\psellipticarc[linestyle=solid](0,0)(4,\Ra){270}{90}
+	%\psellipticarc[linestyle=dotted,linewidth=0.5pt](0,0)(4,\Ra){95}{265}
+	%
+	\psellipticarc[linestyle=solid](0,0)(1.5,2){270}{90}
+	%\psellipticarc[linestyle=dotted,linewidth=0.5pt](0,0)(1.5,2){95}{265}
+	\psellipticarc[linestyle=solid,linecolor=red](0,0)(1,2){90}{270}
+	%\psellipticarc[linestyle=dotted,linecolor=red,linewidth=0.5pt](0,0)(1,2){275}{85}
+	\pstextpath[c](0,0){\psellipticarcn[linestyle=none](0,0)(1.07,2.07){270}{90}}%
+	{\footnotesize{\textcolor{red}{\textsc{Greenwški poldnevnik}}}}
+	%
+	\psellipticarc[linestyle=solid,linecolor=green]{->}(0,2.2)(0.4,0.1){120}{60}
+	\psellipticarc[linestyle=solid,linecolor=green]{->}(0,-2.2)(0.4,0.1){120}{60}
+	
+	%
+	% Star astro coordinates
+	%
+	\psline(0,0)(-2.8,-2.8)
+	\psdot[linecolor=red,dotsize=10pt,dotstyle=Basterisk](3.75,2.15)
+	\psellipticarc[linestyle=solid,linecolor=red](0,0)(3.2,\Ra){90}{270}
+	\psellipticarc[linestyle=solid,linecolor=cyan,linewidth=1pt]{<-}(0,0)(\Ra,3.2){-35}{225}
+	\psellipticarc[linestyle=solid,linecolor=cyan,linewidth=1pt]{->}(0,0)(4,\Ra){-35}{30}
+	
+	
+	%
+	% Star lat & long coordinates
+	%	
+	\psline(0,0)(3.75,2.15)
+	\psline(0,0)(1.4,-0.7)
+	\psellipticarc[linestyle=solid,linecolor=blue,linewidth=1pt]{->}(0,0)(2,1){225}{333}
+	\psellipticarc[linestyle=solid,linecolor=blue,linewidth=1pt]{->}(0,0)(1.5,2){332}{30}
+	\psline{->}(2.4,0.8)(1.5,0.8)
+	\psline{->}(1.4,2.1)(3.5,2.1)
+	
+	
+	%
+	% dots
+	%	
+	\psdot[linecolor=red,dotsize=3pt](1.37,0.8)
+	
+	%
+	% text
+	%
+	\rput(0,2.8){$P_{\text{n}}$}
+	\rput(0,-2.8){$P_{\text{s}}$}
+	\rput(2.2,1){GP}
+	\rput[br](3.4,2.2){Nebesno telo}
+	%
+	\rput(1.7,0.2){$\textcolor{blue}{\varphi}$}
+	\rput(0.4,-0.75){$\textcolor{blue}{\lambda}$}	
+	\rput(4.2,0){$\textcolor{cyan}{\delta}$}
+	\rput{-25}(-4,-2.1){\textcolor{cyan}{\textsc{Gha}}}
+	
+	\end{pspicture}
+	
+\end{document}
+
