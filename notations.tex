@@ -71,6 +71,15 @@
 \newcommand{\longprt}[2]{\frac{\prt #1}{\prt #2}}
 \newcommand{\longprtt}[2]{\frac{\prt^2 #1}{\prt #2^2}}
 
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+\newcommand{\tikzarc}[1]{%
+	\tikzmarknode{a}{#1}
+	\begin{tikzpicture}[overlay,remember picture]
+		\draw ([yshift=1pt]a.north west) to[bend left=20] ([yshift=1pt]a.north east);
+	\end{tikzpicture}%
+}% end of \tikzarc
+
 
 %
 % *** Fancy arc formats ***
@@ -102,6 +111,10 @@
 \newcommand{\Long}[3]{\qty[minimum-integer-digits = 3]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}\:\text{#3}}
 \newcommand{\Az}[1]{\qty[minimum-integer-digits = 3, minimum-decimal-digits = 1]{#1}{\degree}}
 \newcommand{\Alt}[2]{\qty[minimum-integer-digits = 2]{#1}{\degree}\:\qty[minimum-integer-digits = 2, minimum-decimal-digits = 1]{#2}{\arcminute}}
+\newcommand{\gha}{\textsc{Gha}}
+\newcommand{\sha}{\textsc{Sha}}
+\newcommand{\lha}{\textsc{Lha}}
+\newcommand{\dec}{\delta}
 
 
 %
