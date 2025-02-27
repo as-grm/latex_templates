@@ -1,0 +1,46 @@
+\documentclass{minimal}
+\usepackage{pstricks}
+\usepackage{fontspec}
+
+\newcommand{\leftboat}[1]{%
+	\psscalebox{#1}{\fontspec{symbola.ttf}{\symbol{"1F6A3}}}
+}
+\newcommand{\rightboat}[1]{%
+	\psscalebox{-1 1}{\psscalebox{#1}{\fontspec{symbola.ttf}{\symbol{"1F6A3}}}}
+}
+
+\begin{document}
+	%\setmainfont{quivira.otf}
+	%\symbol{"26F5}\symbol{"26F4}
+	
+	%\setmainfont{symbola.ttf}
+	
+	\psscalebox{3}{\fontspec{symbola.ttf}{\symbol{"2468}}}
+	
+	\vskip 5mm
+	\psscalebox{3}{\fontspec{symbola.ttf}{\symbol{"26F5}}}
+	
+	\vskip 5mm
+	\psscalebox{3}{\fontspec{symbola.ttf}{\symbol{"26F4}}}
+	
+	\vskip 5mm
+	\psscalebox{3}{\fontspec{symbola.ttf}{\symbol{"1F6A4}}}
+	
+	\vskip 5mm
+	\psscalebox{3}{\fontspec{symbola.ttf}{\symbol{"1F6A2}}}
+	
+	\vskip 5mm
+	\psscalebox{3}{\fontspec{symbola.ttf}{\symbol{"1F6A3}}}
+	
+	\vskip 5mm
+	pišem dalje in rišem psfig
+	
+	%\begin{pspicture}(-5,-5)(5,5)
+	\begin{pspicture}(-3.5,-1.5)(3.5,1.5)
+	\psgrid[griddots=10,subgriddots=3,gridlabelcolor=red](-3,-1)(3,1)
+		\rput(-1,0){\leftboat{4}}
+		\rput(1,0){\rightboat{4}}
+	\end{pspicture} 
+	
+	%\rightboat
+\end{document}
