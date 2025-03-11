@@ -136,6 +136,9 @@
 \newcommand{\OP}{\textsc{Op}}
 \newcommand{\AP}{\textsc{Ap}}
 \newcommand{\LOP}{\textsc{Lop}}
+\newcommand{\Hc}{H_\text{c}}
+\newcommand{\Ho}{H_\text{o}}
+
 
 
 %
@@ -214,6 +217,14 @@
 % *** Blocks: block, exampleblock, alertblock ***
 % ***********************************************
 
+
+% *** colored boxes ***
+\usepackage[most]{tcolorbox} 
+\tcbuselibrary{theorems}
+\newtcbtheorem[number within=section]{mydefinition}{Definicija}{colback=navyblue!25!white,colframe=navyblue,fonttitle=\bfseries}{def}
+\newtcbtheorem[number within=section]{mylema}{Lema}{colback=navyblue!25!white,colframe=navyblue,fonttitle=\bfseries}{lem}
+\newtcbtheorem[number within=section]{mytheorem}{Izrek}{colback=deepcarminepink!25!white,colframe=deepcarminepink,fonttitle=\bfseries}{thm}
+
 %
 % *** Blocks: block, exampleblock, alertblock ***
 %
@@ -244,6 +255,13 @@
 	\dp\mytempbox\mytemplen
 	\colorbox{myblue}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
 \makeatother
+
+\newtcbox{\mymath}[1][]{%
+	nobeforeafter, math upper, tcbox raise base,
+	drop lifted shadow, sharp corners, % senčka, ostri koti
+	enhanced, colframe=blue!30!black,
+	colback=blue!20, boxrule=0.7pt,
+	#1}
 
 
 % *** Example Boxed Equation ***
