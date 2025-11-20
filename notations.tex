@@ -18,7 +18,7 @@
 %
 \usepackage{dsfont}
 \usepackage{siunitx}
-
+\usepackage{xcolor}
 %
 % *** Usage with ifplatform ***
 %
@@ -129,6 +129,7 @@
 \newcommand{\gha}{\textsc{Gha}}
 \newcommand{\sha}{\textsc{Sha}}
 \newcommand{\lha}{\textsc{Lha}}
+\newcommand{\hang}{\textsc{Ha}}
 \newcommand{\dec}{\delta}
 \newcommand{\PN}{\textsc{Pn}}
 \newcommand{\PS}{\textsc{Ps}}
@@ -169,6 +170,8 @@
 \newcommand{\RE}{\text{\textsl{Re}}}
 \newcommand{\MA}{\text{\textsl{Ma}}}
 \newcommand{\KN}{\text{\textsl{Kn}}}
+\newcommand{\KC}{\text{\textsl{Kc}}}
+\newcommand{\DP}{\text{\textsl{Dp}}}
 %\newcommand{\half}{\sfrac{1}{2}}
 \newcommand{\half}{1/2}
 
@@ -198,8 +201,13 @@
 % *** redefine EMPH types ***
 %
 \newcommand{\missing}[1]{\textcolor{red}{\textbf{???#1???}}}
-\newcommand{\emphc}[1]{\textcolor{blue}{\textbf{#1}}}
-\newcommand{\emphcb}[1]{\textcolor{deepcarminepink}{\textbf{#1}}}
+% red color
+\newcommand{\emphcr}[1]{\textcolor{red}{\textbf{#1}}} 
+% blue color
+\newcommand{\emphcb}[1]{\textcolor{blue}{\textbf{#1}}}
+% default magenta color
+\renewcommand{\emph}[1]{\textcolor{magenta}{\textbf{#1}}}
+%
 \newcommand{\myfig}[1]{\iflanguage{english}{\textbf{Figure}}{\textbf{Slika}} #1}
 \newcommand{\myeq}[1]{\iflanguage{english}{\textbf{Eq.}}{\textbf{En.}} (#1)}
 
