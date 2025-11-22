@@ -72,7 +72,12 @@
 	% Avoid duplicate 'page.1' by disabling page anchors on title/front matter
 	\hypersetup{pageanchor=false}
 	\pagenumbering{roman}
-	
+
+
+% *****************************************
+% ***         start title body          ***
+% *****************************************
+
 	%\thispagestyle{empty}
 	Naslov: \minimal@NASLOV\\[5mm]
 	Avtor: \minimal@AVTOR\\[5mm]
@@ -85,11 +90,10 @@
 		\fi
 	\fi
 
-	
-	
-	
-	
 
+% *****************************************
+% ***        start document body        ***
+% *****************************************
 
 	\clearpage
 	%\cleardoublepage
@@ -102,5 +106,7 @@
 % -----------------------------------------------
 \RequirePackage{bookmark} % better outlines; fewer reruns
 
-% End of class
+% ********************
+% *** End of class ***
+% ********************
 
