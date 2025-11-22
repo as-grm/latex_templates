@@ -16,7 +16,6 @@
 \RequirePackage{newfile}
 \RequirePackage{etoolbox}
 \RequirePackage{ifthen}
-%\RequirePackage{keyval}
 \RequirePackage{kvoptions}
 \RequirePackage{makeidx}
 \RequirePackage{setspace}
@@ -50,19 +49,25 @@
 
 
 % ******************************************************************
-% *** Izpis PDF/A
+%                *** Izdelava PDF/A dokument ***
 % ******************************************************************
 %
-% Generira se navaden PDF, ki ge je potrebno pretvorit v PFD/A
+% pdfLatex generira navaden PDF, ki ga je potrebno pretvorit v PFD/A
 %
-% Lahko se naredi online: https://www.pdfforge.org/online/en/pdf-to-pdfa
-% in potem validira: https://www.pdfforge.org/online/en/validate-pdfa
+% pretvorba v PDF/A online: 
+%           https://www.pdfforge.org/online/en/pdf-to-pdfa
+% 
+% validacija PDF/A: 
+%           https://www.pdfforge.org/online/en/validate-pdfa
 %
 % ******************************************************************
 
+% potrebno za izdelavo vseh hyper metapodatkov
 \RequirePackage{hyperref}
 
+% *** izdelava tesesa dokumenta ***
 \AfterEndPreamble{
+	
 	% Doda metadata informacijo za metadata podatke v PDF/A
 	\hypersetup{
 		pdfauthor={\minimal@AVTOR},
